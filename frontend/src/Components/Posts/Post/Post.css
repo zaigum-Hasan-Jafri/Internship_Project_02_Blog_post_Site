@@ -1,0 +1,44 @@
+.Post {
+    width: 300px;
+    margin: 0px 25px 40px 25px;
+}
+
+.post-img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 9px;
+}
+
+.post-body-cats {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-weight: 500;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    letter-spacing: 4px;
+}
+
+.post-body-cat {
+    padding-left: 22px;
+}
+
+.post-title {
+    font-family: 'Josefin Sans', cursive;
+    font-weight: 300;
+    font-size: 22px;
+}
+
+.post-date {
+    display: flex;
+    justify-content: flex-end;
+}.post-description
+{
+    letter-spacing: 2px;
+    line-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}

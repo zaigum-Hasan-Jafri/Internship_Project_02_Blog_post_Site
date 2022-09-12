@@ -1,0 +1,49 @@
+.topbar {
+    position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    top: 0px;
+    width: 100%;
+    min-width: 550px;
+    height: 50px;
+    color: rgb(253, 251, 251);
+    background-color: black;
+    z-index: 999;
+}
+
+.topbar-left,
+.topbar-right {
+    flex: 1;
+}
+
+.topbar-left {
+    font-size: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.topbar-center {
+    flex: 2;
+    font-family: 'Lora','san-sarif';
+    font-weight: 300;
+}
+
+.topbar-center-list,
+.topbar-right-list {
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+}
+
+.right-list-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.right-list-search {
+    font-size: 30px;
+}
