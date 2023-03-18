@@ -9,7 +9,6 @@ const SideBar = () => {
         const catData = async () => {
             const res = await axios.get(`http://localhost:8000/category/all`);
             setcategory(res.data);
-            // console.log(res.data);
         };
         catData();
     }, [])
@@ -28,10 +27,6 @@ const SideBar = () => {
                         <li key={index} className="sidebar-listItem">{c.name}</li>
                         </Link>
                     ))}
-                    {/* <li className="sidebar-listItem">Movie</li> */}
-                    {/* <li className="sidebar-listItem">Sports</li> */}
-                    {/* <li className="sidebar-listItem">Animation</li> */}
-                    {/* <li className="sidebar-listItem">Cinema</li> */}
                 </ul>
             </div>
             <div className="sidebar-items">

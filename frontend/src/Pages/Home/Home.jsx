@@ -11,19 +11,17 @@ const Home = () => {
   const { user} = useContext(Context)
   const [posts, setposts] = useState('')
   const {search} = useLocation();
-  // console.log(userpath)
   useEffect(() => {
     const fetchData = async () => {
       const res = await axios.get('http://localhost:8000/post/all'+search);
       setposts(res.data);
-      // console.log(res.data);
     }
     fetchData();
   }, [search,user])
   return (
-    <div>
+    <div className="home">
       <Header />
-      <div className="home">
+      <div className="home-container">
         <Posts posts={posts}/>
         <SideBar />
       </div>

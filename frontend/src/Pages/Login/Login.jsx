@@ -7,7 +7,6 @@ import './Login.css'
 export default function Login() {
     const { user, dispatch, loading, error } = useContext(Context)
     const navigate = useNavigate();
-    // const [error, setError] = useState(null);
     const userRef = useRef();
     const passRef = useRef();
     const handleSubmit = async (e) => {
@@ -21,10 +20,9 @@ export default function Login() {
             dispatch({ type: "LOGIN_SUCCESS", payload: res.data })
         } catch (err) {
             dispatch({ type: "LOGIN_FAIL", payload: err.response.data.message });
-            err && console.log(error)
+            err && console.error(error)
         }
         user && console.log(user) && navigate('/home')
-        console.log(loading);
     }
     return (
         <div className='Login '>

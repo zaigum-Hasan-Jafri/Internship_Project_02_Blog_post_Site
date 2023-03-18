@@ -1,4 +1,4 @@
-
+//post-Schema
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
@@ -18,7 +18,7 @@ const postSchema = new Schema(
             required: true,
         },
         photo: {
-            type: String,
+            type: String, 
             required: false
         },
         categories: {

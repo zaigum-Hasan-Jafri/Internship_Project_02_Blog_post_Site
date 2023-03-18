@@ -1,8 +1,12 @@
+*{
+    padding: 0;
+    margin:0;
+    box-sizing:border-box;
+}
 .center {
     display: flex;
     justify-content: center;
     align-items: center;
-    ;
 }
 
 .center-column {
@@ -10,7 +14,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    ;
 }
 
 .t-center {

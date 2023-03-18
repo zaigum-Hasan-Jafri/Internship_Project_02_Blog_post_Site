@@ -1,20 +1,37 @@
 .PageSettings {
+    width:100vw;
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: wrap;
 }
 
 .setting-wrapper {
-    flex: 9;
+    flex:1 1 50vw ;
+    height: 30vw;
+    margin: 1rem 0 0 2rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 1px #867974 solid;
+    border-radius: 1rem;
+    background: #7c5e8c;
+    box-shadow: 5px -5px 13px #e9e3e3,
+        -5px 5px 13px #1b1a1a;
+    backdrop-filter: blur(6.5px);
 }
 
 .setting-form {
-    display: inline;
+    flex:1 1 35rem ;
+    background-color: #ffe9df;
+    border-radius: 1rem 1rem 0 0;
     flex-direction: column;
     align-items: center;
-
+    margin: 1rem 0 0 0;
+    
 }
 
 .setting-title {
+    flex:1 1 20rem;
+    height: fit-content;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -23,12 +40,9 @@
 
 .setting-title-update {
     font-size: 25px;
-    margin-bottom: 12px;
-    margin-top: 10px;
-    margin-left: 350px;
     border-bottom: 1px solid;
     text-transform: uppercase;
-    color: lightsalmon;
+    color: #ffe9df;
 }
 
 .setting-title-delete {
@@ -39,18 +53,16 @@
 
 .setting-form-profile {
     font-size: 16px;
-    color: lightcoral;
+    color: #554f4d;
     font-family: 'Aboreto', cursive;
     font-weight: 600;
-    padding-bottom: 17px;
-    padding-top: 17px;
-    padding-left: 10px;
+    padding: 2rem 0 0 1rem;
 
 }
 
 .setting-form-profile-img {
     align-items: center;
-    margin: 10px 0;
+    margin: 1rem 1rem;
 }
 
 .setting-form-img {
@@ -69,7 +81,8 @@
 }
 
 .setting-form-info {
-    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
 }
 
 .setting-form-info-value {

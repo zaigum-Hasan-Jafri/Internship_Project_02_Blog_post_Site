@@ -1,6 +1,5 @@
 
 // //Backend with the MVC pattern (models, controller, and router folder seperate)
-// const cookieParser = require("cookie-parser");
 const express = require('express');
 const multer = require("multer")
 const dotenv = require('dotenv');
@@ -13,46 +12,45 @@ const userRouter = require("./Router/User.routes");
 const postRouter = require("./Router/Post.routes");
 const categoryRoute = require('./Router/Category.routes');
 const path = require('path');
-// const User = require('./models/UserSchema');
+const fs = require('fs');
 
-
+// To Connect client with server and parse JSON data
 app.use(cors());
 dotenv.config();
 app.use(express.json());
-app.use("/images",express.static(path.join(__dirname,"/images")))
-// app.use(cookieParser())
+app.use("/images", express.static(path.join(__dirname, "/images")))
 connectToMongo();
 
 //Storage
-const multerStorage = multer.diskStorage({
+const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, 'images');
-    }, filename: (req, file, cb) => {
+    }, filename: (req, file, cb) => {        
         cb(null, req.body.name);
     }
 });
-const upload = multer({ storage: multerStorage });
+const upload = multer({ storage: storage });
 
-app.post("/file/upload", upload.single('file'),(req, res) => {
-   try {
-    res.status(201).json('uploaded')
-    console.log(req.file)
-   } catch (error) {
-    res.send(error.message)
-   }
+// File Port
+app.post("/file/upload", upload.single('file'), (req, res) => {
+    try {
+        res.status(201).json('uploaded')
+        console.log(req.file)
+    } catch (error) {
+        res.send(error.message)
+    }
 });
 
-// routes
+// main-server-routes
 app.use('/auth', authRouter);
 app.use('/users', userRouter);
 app.use('/post', postRouter);
 app.use('/category', categoryRoute);
 
 
-
+//home-server-route
 app.use('/', (req, res) => {
     res.json(`welcome to ${port} port.`);
-    console.log("welcome")
 })
 app.listen(port, () => {
     console.log(`connection to the ${port} ready and working`);

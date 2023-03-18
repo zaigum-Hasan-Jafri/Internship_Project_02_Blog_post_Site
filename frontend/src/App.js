@@ -10,12 +10,13 @@ import { useContext } from "react";
 import { Context } from "./Context/Context";
 
 function App() {
-  const {user} = useContext(Context);
+  const { user } = useContext(Context);
   return (
-    <><Topbar />
+    <div>
+      <Topbar />
 
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path={"/home"} element={<Home />} />
         <Route path="/" element={<Home />} />
         <Route path="/post/:postId" element={<SinglePost />} />
         <Route path="/newpost" element={user ? <NewPost /> : <Login />} />
@@ -24,7 +25,7 @@ function App() {
         <Route path="/user-settings" element={user ? <PageSettings /> : <Register />} />
       </Routes>
 
-    </>
+    </div>
   );
 }
 

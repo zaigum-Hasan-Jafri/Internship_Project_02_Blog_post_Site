@@ -13,7 +13,6 @@ exports.create = async (req, res, next) => {
 
 //find-all
 exports.all = async (req, res, next) => {
-    // const Category = req.query.category
     try {
         const category = await Category.find()
         res.status(200).json(category);

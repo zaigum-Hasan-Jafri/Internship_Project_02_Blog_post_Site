@@ -1,12 +1,17 @@
 .SideBar {
-    flex: 3;
+    flex: 1 1 10vw;
     margin: 20px;
     padding-bottom: 30px;
-    background-color: #fbfbfb;
     border-radius: 10px;
+    border: 1px black solid;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: #7c5e8c59;
+    box-shadow: 5px -5px 13px #e9e3e3,
+        -5px 5px 13px #1b1a1a;
+    backdrop-filter: blur(6.5px);
+    -webkit-backdrop-filter: blur(6.5px);
 }
 
 .sidebar-title {
@@ -16,6 +21,7 @@
     width: 80%;
     font-family: 'Aboreto', cursive;
     text-align: center;
+    color: #6f1d57;
     border-top: 1px solid #000;
     border-bottom: 1px solid #000;
 }

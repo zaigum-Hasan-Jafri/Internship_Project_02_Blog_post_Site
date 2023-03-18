@@ -26,6 +26,7 @@
     background-color: #fff;
     padding: 30px;
     border-radius: 12px;
+    text-align:center;
 }
 
 .login-form-profile {
@@ -47,4 +48,7 @@
 
 .register-text {
     padding-top: 10px;
+}
+.required{
+    color:#ff0155;
 }

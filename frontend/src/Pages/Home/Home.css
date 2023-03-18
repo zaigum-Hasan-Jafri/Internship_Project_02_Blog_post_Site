@@ -1,4 +1,9 @@
-.home
-{
+.home-container {
     display: flex;
+}
+
+@media screen and (max-width:768px) {
+    .home-container {
+        flex-flow: column wrap;
+    }
 }

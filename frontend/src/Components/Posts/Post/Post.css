@@ -1,13 +1,32 @@
 .Post {
     width: 300px;
+    max-width: max-content;
+    max-height: fit-content;
     margin: 0px 25px 40px 25px;
+    border-radius: 1rem;
+    border: 2px #323032 solid;
+    background: rgba(217, 212, 212, 0.35);
+    box-shadow: 5px -5px 13px #e9e3e3,
+        -5px 5px 13px #1b1a1a;
+    backdrop-filter: blur(6.5px);
+    -webkit-backdrop-filter: blur(6.5px);
+}
+
+.post-container-img {
+    max-width: 20rem;
+    height: 10rem;
+    padding: 1rem;
 }
 
 .post-img {
-    height: 200px;
     width: 100%;
-    object-fit: cover;
-    border-radius: 9px;
+    height: inherit;
+    object-fit: contain;
+    object-position: center center;
+}
+
+.post-body {
+    color: #ffe9df;
 }
 
 .post-body-cats {
@@ -16,7 +35,9 @@
     font-weight: 500;
     margin-top: 10px;
     margin-bottom: 15px;
+    padding-top: 1rem;
     letter-spacing: 4px;
+    color: #ffe9df;
 }
 
 .post-body-cat {
@@ -32,13 +53,19 @@
 .post-date {
     display: flex;
     justify-content: flex-end;
-}.post-description
-{
+    font-size: 0.71rem;
+    color: #000000;
+    padding: 0.5rem 0;
+}
+
+.post-description {
     letter-spacing: 2px;
+    text-transform: capitalize;
     line-height: 20px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    padding: 0.5rem 0.25rem;
 }

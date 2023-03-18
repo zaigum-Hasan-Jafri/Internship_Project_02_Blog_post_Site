@@ -1,10 +1,33 @@
 const User = require("../Model/User")
-// const bcrypt = require("bcrypt");
 const Post = require("../Model/Post");
+const Category = require("../Model/Category");
 
 //create
 exports.create = async (req, res, next) => {
     const newPost = new Post(req.body)
+    Category.find({ name: { $in: req.body.categories } }, async (err, category) => {
+        if (err) {
+            return res.status(500).json(err)
+        }
+        if (category.length > 0) {
+            const existCategory = category.map(category => category.name);
+            console.log(`category already existed:${existCategory.join(",")}`);
+            console.log(existCategory.length);
+            return;
+        }
+        const newCategories = req.body.categories.map(category => ({ name: category }));
+        console.log('new categories: ' + newCategories);
+        Category.insertMany(newCategories, (err, savedCategories) => {
+            if (err) {
+                // Handle the error
+                return res.status(500).send(err);
+            }
+
+            // Return a success response with the new categories
+            console.log(savedCategories);
+        });
+
+    })
     try {
         const savePost = await newPost.save()
         res.status(200).json(savePost)
@@ -76,15 +99,17 @@ exports.all = async (req, res, next) => {
     const Category = req.query.category
     try {
         let posts;
-        if(username){
-            posts = await Post.find({username})
+        if (username) {
+            posts = await Post.find({ username })
         }
-        else if (Category){
-            posts = await Post.find({categories:{
-                $in:[Category]
-            }})
+        else if (Category) {
+            posts = await Post.find({
+                categories: {
+                    $in: [Category]
+                }
+            })
         }
-        else{
+        else {
 
             posts = await Post.find()
         }

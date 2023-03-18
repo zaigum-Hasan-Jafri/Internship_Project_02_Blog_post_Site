@@ -26,16 +26,13 @@ const Topbar = () => {
                             <li>
                                 <Link to='/login' className='link'>Log In
                                 </Link></li>
-                            <li to='/register' className='link'>SignUp</li>
-                        </>)}
-                        {/*{!user && <Link to="/login" className='link'><li>Log In</li></Link>}
-                        {!user && <Link to="/register" className='link'><li>Sign Up</li></Link>}
-                        {user && <Link to="/login" className='link' onClick={hadnleLogout}><li>Logout</li></Link>} */}
+                            <Link to='/register' className='link'><li>SignUp</li></Link>
+                        </>)}                        
                     </ul>
                 </div>
                 <div className="topbar-right">
                     <ul className="topbar-right-list">
-                        {user && <Link to={`/user-settings`}><li><img src={Profile + user.profile} alt="img-01" className="right-list-image" title={`${user.username}-setting`} /></li></Link>}
+                        {user && <Link to={`/user-settings`}><li><img src={Profile + user.profile} alt={`${user.username}`} className="right-list-image" title={`${user.username}-setting`} /></li></Link>}
                         <i className="fa-solid fa-magnifying-glass right-list-search cur center"></i>
                     </ul>
                 </div>

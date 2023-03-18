@@ -29,11 +29,11 @@
 
 .newPost-form-title {
     border: none;
-    font-size: 25px;
+    font-size: 22px;
     font-family: 'Rubik Dirt', cursive;
     color: inherit;
     padding: 18px;
-    width: 70vh;
+    width: 80vh;
     margin: 10px;
     background-color: transparent;
 }
@@ -42,7 +42,7 @@
     outline: none;
     border-top: 1px solid #000;
     font-size: 22px;
-    padding: 16px;
+    padding: 18px;
     width: 80vh;
 }
 
@@ -52,8 +52,9 @@
     font-size: 16px;
     font-family: 'Lora', 'Aboreto', cursive;
     font-weight: 500;
-    padding: 12px;
-    width: 70vh;
+    padding: 15px;
+    width: 85vw;
+    height: fit-content;
     background-color: transparent;
 }
 
@@ -64,7 +65,7 @@
     font-weight: 500;
     padding: 15px;
     width: 85vw;
-    height: 50vh;
+    height: fit-content;
 }
 
 .newPost-form-button {

@@ -8,36 +8,49 @@ export default function NewPost() {
     const [title, setTitle] = useState("");
     const [desc, setDesc] = useState("");
     const [file, setFile] = useState("");
+    const [categories, setCategories] = useState('');
 
+    const handleInput = (event) => {
+        const input = event.target.value;
+        const words = input.split(' ');
+        const linkedWords = words.map((word) => {
+            return (word.startsWith('http://') || word.startsWith('https://')) ? (`<a href="${word}" target="_blank">${word}</a>`) : (word)
+        });
+        const linkedInput = linkedWords.join(' ');
+        setDesc(linkedInput);
+    }
     const handleSubmit = async (e) => {
+        e.preventDefault();
         const newPost = {
             title,
             desc,
             username: user.username,
+            photo: file,
+            categories: categories.split(',').map((category) => category.toLowerCase().trim())
         }
         if (file) {
             const data = new FormData();
-            const filename = Date.now() + file.name;
+            const filename = file.size + file.name;
             data.append("name", filename)
             data.append("file", file);
             newPost.photo = filename;
             try {
-                await axios.post("http://localhost:8000/file/upload", data)
+                axios.post("http://localhost:8000/file/upload", data);
             } catch (error) {
-                console.log(error);
+                console.error(error);
             }
         }
         try {
-            const res = await axios.post("http://localhost:8000/post/create", newPost);
-            window.location.replace('/post/'+res.data._id);
-            // console.log(res.data);
+            await axios.post("http://localhost:8000/post/create", newPost);
+            window.location.replace('/home');
         } catch (error) {
-            console.log(error);
+            console.error(error);
         }
     }
+
     return (
         <div className='NewPost'>
-            {file && (<img src={URL.createObjectURL(file)} alt="" className="NewPost-img" />)}
+            {file && (<img src={URL.createObjectURL(file)} alt="your_post_image" className="NewPost-img" />)}
 
             <form className="newPost-form" onSubmit={handleSubmit}>
                 <div className="newPost-form-group center">
@@ -46,12 +59,21 @@ export default function NewPost() {
                     <input type="text" name="" id="textInput" placeholder='Title' className='newPost-form-title' autoFocus={true} onChange={e => setTitle(e.target.value)} />
                 </div>
                 <div className="newPost-form-group center">
-                    <textarea name="" id="textareaInput" placeholder='Write Something... & Tell your Story' className='newPost-form-textarea' onChange={e => setDesc(e.target.value)}></textarea>
+                    <input type="text" value={categories} placeholder='Categories' onChange={e => setCategories(e.target.value)} className='newPost-form-title' />
+                </div>
+                <div className="newPost-form-group center">
+                    <textarea
+                        name=""
+                        id="textareaInput"
+                        placeholder='Write Something... & Tell your Story'
+                        className='newPost-form-textarea'
+                        onChange={handleInput}
+                    />
                 </div>
                 <div className="center">
                     <button type="submit" className='newPost-form-button'>Publish Post</button>
                 </div>
-            </form>
-        </div>
+            </form >
+        </div >
     )
 }
