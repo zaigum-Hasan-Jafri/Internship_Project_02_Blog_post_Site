@@ -35,13 +35,13 @@ export default function NewPost() {
             data.append("file", file);
             newPost.photo = filename;
             try {
-                axios.post("http://localhost:8000/file/upload", data);
+                axios.post("/file/upload", data);
             } catch (error) {
                 console.error(error);
             }
         }
         try {
-            await axios.post("http://localhost:8000/post/create", newPost);
+            await axios.post("/post/create", newPost);
             window.location.replace('/home');
         } catch (error) {
             console.error(error);

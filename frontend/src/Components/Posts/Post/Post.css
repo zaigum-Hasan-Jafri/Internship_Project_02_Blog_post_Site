@@ -6,8 +6,7 @@
     border-radius: 1rem;
     border: 2px #323032 solid;
     background: rgba(217, 212, 212, 0.35);
-    box-shadow: 5px -5px 13px #e9e3e3,
-        -5px 5px 13px #1b1a1a;
+    box-shadow: -5px 5px 13px #1b1a1a;
     backdrop-filter: blur(6.5px);
     -webkit-backdrop-filter: blur(6.5px);
 }

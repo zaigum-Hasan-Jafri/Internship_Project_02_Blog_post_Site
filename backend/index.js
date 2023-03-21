@@ -1,5 +1,5 @@
 
-// //Backend with the MVC pattern (models, controller, and router folder seperate)
+//Backend with the MVC pattern (models, controller, and router folder seperate)
 const express = require('express');
 const multer = require("multer")
 const dotenv = require('dotenv');
@@ -52,6 +52,12 @@ app.use('/category', categoryRoute);
 app.use('/', (req, res) => {
     res.json(`welcome to ${port} port.`);
 })
+
+app.use(express.static(path.join(__dirname, "/frontend/build")));
+app.get("*", (req, res) =>
+  res.sendFile(path.join(__dirname, "/frontend/build/index.html"))
+);
+
 app.listen(port, () => {
     console.log(`connection to the ${port} ready and working`);
 })

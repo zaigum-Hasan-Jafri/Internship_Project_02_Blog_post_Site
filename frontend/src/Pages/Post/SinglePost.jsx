@@ -13,10 +13,10 @@ const SinglePost = () => {
     const [update, setUpdate] = useState(false)
     const location = useLocation()
     const path = (location.pathname.split('/')[2])
-    const Profile = "http://localhost:8000/images/"
+    const Profile = "/images/"
     useEffect(() => {
         const postData = async () => {
-            const res = await axios.get(`http://localhost:8000/post/post/${path}`);
+            const res = await axios.get(`/post/post/${path}`);
             setpost(res.data);
             setTitle(res.data.title)
             setDesc(res.data.desc)
@@ -26,7 +26,7 @@ const SinglePost = () => {
 
     const handleDelete = async () => {
         try {
-            await axios.delete(`http://localhost:8000/post/delete/${post._id}`, {
+            await axios.delete(`/post/delete/${post._id}`, {
                 data: { username: user.username }
             });
             window.location.replace("/home");
@@ -37,7 +37,7 @@ const SinglePost = () => {
     const handleUpdate = async () => {
 
         try {
-            await axios.put(`http://localhost:8000/post/update/${post._id}`, {
+            await axios.put(`/post/update/${post._id}`, {
                 username: user.username, title, desc
             });
             window.location.reload();

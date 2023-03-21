@@ -12,11 +12,11 @@ const PageSettings = () => {
     const [success, setsuccess] = useState(false)
     const [update, setUpdate] = useState(false)
     const [file, setFile] = useState("");
-    const Profile = "http://localhost:8000/images/"
+    const Profile = "/images/"
 
     useEffect(() => {
         const userData = async () => {
-            const res = await axios.get(`http://localhost:8000/users/user/${user._id}`);
+            const res = await axios.get(`/users/user/${user._id}`);
             console.log(res.data.profile);
             setusername(res.data.username)
             setemail(res.data.email)
@@ -26,7 +26,7 @@ const PageSettings = () => {
 
     const handleDelete = async () => {
         try {
-            await axios.delete(`http://localhost:8000/users/delete/${user._id}`, {
+            await axios.delete(`/users/delete/${user._id}`, {
                 data: { username }
             });
             window.location.replace("/home");
@@ -50,13 +50,13 @@ const PageSettings = () => {
             data.append("file", file);
             newUser.profile = filename;
             try {
-                await axios.post("http://localhost:8000/file/upload", data)
+                await axios.post("/file/upload", data)
             } catch (error) {
                 console.error(error);
             }
         }
         try {
-            await axios.put(`http://localhost:8000/users/update/${user._id}`, newUser);
+            await axios.put(`/users/update/${user._id}`, newUser);
         } catch (error) {
             seterror(error.response.data.message);
         } setsuccess(true)

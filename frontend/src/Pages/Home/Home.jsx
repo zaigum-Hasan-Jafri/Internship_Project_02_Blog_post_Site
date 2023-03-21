@@ -13,7 +13,7 @@ const Home = () => {
   const {search} = useLocation();
   useEffect(() => {
     const fetchData = async () => {
-      const res = await axios.get('http://localhost:8000/post/all'+search);
+      const res = await axios.get('/post/all'+search);
       setposts(res.data);
     }
     fetchData();

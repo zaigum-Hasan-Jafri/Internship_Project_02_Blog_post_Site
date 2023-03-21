@@ -12,7 +12,7 @@ export default function Register() {
         e.preventDefault();
         seterror(null)
         try {
-            const res = await axios.post('http://localhost:8000/auth/register', {
+            const res = await axios.post('/auth/register', {
                 username, email, password
             });
             res.data && window.location.replace('/login')

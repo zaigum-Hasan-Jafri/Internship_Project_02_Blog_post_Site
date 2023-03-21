@@ -7,7 +7,7 @@ const SideBar = () => {
     const [category, setcategory] = useState([])
     useEffect(() => {
         const catData = async () => {
-            const res = await axios.get(`http://localhost:8000/category/all`);
+            const res = await axios.get(`/category/all`);
             setcategory(res.data);
         };
         catData();

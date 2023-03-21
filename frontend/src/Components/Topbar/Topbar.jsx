@@ -4,7 +4,7 @@ import { Context } from '../../Context/Context'
 import './Topbar.css'
 const Topbar = () => {
     const { user, dispatch } = useContext(Context);
-    const Profile = "http://localhost:8000/images/"
+    const Profile = "/images/"
     const handleLogout = () => {
         dispatch({ type: "LOGOUT" })
     }
