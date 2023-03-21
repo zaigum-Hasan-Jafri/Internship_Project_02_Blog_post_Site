@@ -18,7 +18,6 @@ const fs = require('fs');
 app.use(cors());
 dotenv.config();
 app.use(express.json());
-const __dirname = path.resolve();
 app.use("/images", express.static(path.join(__dirname, "/images")))
 connectToMongo();
 
