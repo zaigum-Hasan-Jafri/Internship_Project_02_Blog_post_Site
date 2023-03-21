@@ -18,11 +18,6 @@ const fs = require('fs');
 app.use(cors());
 dotenv.config();
 app.use(express.json());
-app.use(
-    cors({
-        origin:["http://localhost:3000","https://zaigum-mern-blog.onrender.com/"]
-    })
-)
 app.use("/images", express.static(path.join(__dirname, "/images")))
 connectToMongo();
 
