@@ -6,7 +6,7 @@ const dotenv = require('dotenv');
 const connectToMongo = require('./Database/database');
 const cors = require('cors');
 const app = express();
-const port = process.env.PORT || 8000;
+
 const authRouter = require("./Router/Auth.routes");
 const userRouter = require("./Router/User.routes");
 const postRouter = require("./Router/Post.routes");
@@ -15,7 +15,7 @@ const path = require('path');
 const fs = require('fs');
 
 // To Connect client with server and parse JSON data
-app.use(cors());
+app.use(cors({origin:["https://zaigum-mern-blog.onrender.com","http://localhost:3000"]});
 dotenv.config();
 app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")))
@@ -49,15 +49,11 @@ app.use('/category', categoryRoute);
 
 
 //home-server-route
-app.use('/', (req, res) => {
-    res.json(`welcome to ${port} port.`);
-})
-
 app.use(express.static(path.join(__dirname, "/frontend/build")));
 app.get("*", (req, res) =>
   res.sendFile(path.join(__dirname, "/frontend/build/index.html"))
 );
-
+const port = process.env.PORT || 8000;
 app.listen(port, () => {
     console.log(`connection to the ${port} ready and working`);
 })
