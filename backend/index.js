@@ -15,7 +15,7 @@ const path = require('path');
 const fs = require('fs');
 
 // To Connect client with server and parse JSON data
-app.use(cors({origin:["https://zaigum-mern-blog.onrender.com","http://localhost:3000"]});
+app.use(cors({origin:["https://zaigum-mern-blog.onrender.com","http://localhost:3000"]}));
 dotenv.config();
 app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")))
