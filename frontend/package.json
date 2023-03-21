@@ -1,6 +1,6 @@
 {
   "name": "frontend",
-  "proxy": "http://localhost:8000",
+  "proxy": "https://zaigum-mern-blog-api.onrender.com/ || http://localhost:8000",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
