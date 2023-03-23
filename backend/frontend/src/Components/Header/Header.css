@@ -1,0 +1,34 @@
+.header {
+    margin-top: 40px;
+    width: 100%;
+}
+
+.header-titles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Lora';
+    color: rgb(91, 90, 90);
+}
+
+.header-titles-sm {
+    font-size: 30px;
+    position: absolute;
+    top: 10%;
+    color: teal;
+}
+.header-titles-lg {
+    font-size: 100px;
+    position: absolute;
+    top: 12%;
+    color: rgb(185, 101, 101);
+    font-family: 'Rubik Dirt', cursive;
+}
+.header-img
+{
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    margin-top: 3%;
+}
