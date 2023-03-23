@@ -3,11 +3,8 @@ This is a simple blog web application built on the MERN stack (MongoDB, Express.
 
 ## Installation
 Clone the repository to your local machine using the command:
-bash
-**Copy code**
-*git clone [repository](https://github.com/zaigum-Hasan-Jafri/Internship_Project_02_Blog_post_Site)*
-![copy code](https://drive.google.com/file/d/1K3imsCOSk4dXNsaA39VhAcNzvi1vFSL3/view?usp=share_link)
-Navigate to the project directory using:
+![Clone the respository](https://drive.google.com/file/d/1K3imsCOSk4dXNsaA39VhAcNzvi1vFSL3/view?usp=share_link)
+## Navigate to the project directory using:
 bash
 Copy code
 cd MERN-blog
