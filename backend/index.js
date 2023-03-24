@@ -49,10 +49,6 @@ app.use('/category', categoryRoute);
 
 
 //home-server-route
-<<<<<<< HEAD
-
-=======
->>>>>>> ec65b3ee40792fedd7b1a116a138c09fc2e197d4
 app.use(express.static(path.join(__dirname, "/frontend/build")));
 app.get("*", (req, res) =>
   res.sendFile(path.join(__dirname, "/frontend/build/index.html"))
