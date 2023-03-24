@@ -35,7 +35,7 @@ export default function Login() {
                 <button type="submit" className='login-form-button cur f-lora' disabled={loading}> Login </button>
                 <span className="register-text">Don't have an account? <a href='/register' className='link'>Register</a></span>
                 <hr/>
-                {error && <span className='f-lora center'>****{error}****</span>}
+                {error && <span className='f-lora center'style={{ color: "Red", fontSize: '14px' }}>! {error}*</span>}
             </form>
         </div>
     )

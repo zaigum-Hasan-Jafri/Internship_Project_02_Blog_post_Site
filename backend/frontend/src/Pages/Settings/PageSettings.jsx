@@ -4,7 +4,7 @@ import { useContext, useState, useEffect } from 'react'
 import { Context } from '../../Context/Context'
 import axios from 'axios';
 const PageSettings = () => {
-    const { user } = useContext(Context);
+    const { user, dispatch } = useContext(Context);
     const [username, setusername] = useState('')
     const [email, setemail] = useState('')
     const [password, setpassword] = useState('')
@@ -37,6 +37,7 @@ const PageSettings = () => {
 
     const handleUpdate = async () => {
         const newUser = {
+            _id: user._id,
             name: user.username,
             username: username || user.username,
             email: email || user.email,
@@ -57,9 +58,11 @@ const PageSettings = () => {
         }
         try {
             await axios.put(`/users/update/${user._id}`, newUser);
+            await dispatch({ type: "LOGIN_SUCCESS", payload: newUser });
         } catch (error) {
             seterror(error.response.data.message);
-        } setsuccess(true)
+        }
+        setsuccess(true)
         setInterval(() => { setsuccess(false); window.location.replace('/home'); }, 5000);
         setUpdate(false);
     }
@@ -96,9 +99,11 @@ const PageSettings = () => {
                     </div>
                     {update && <button type="button" className='setting-form-button cur' onClick={handleUpdate}>Submit & Update</button>}
                 </form> <br />
-                {err && <span>{err}</span>}
-                {success && <span className='center f-lora' style={{ color: "green" }}>Successfully Updated</span>} <br />
-                {success && <span className='center f-lora' style={{ color: "green" }}>Make sure to Login Again for things to update.</span>}
+                <div className="setting-title">
+                    {err && <span>{err}</span>}
+                    {success && <span className='center f-lora' style={{ color: "whitesmoke" }}>Successfully Updated</span>} <br />
+                    {success && <span className='center f-lora' style={{ color: "whitesmoke" }}>Hang Tight, Teleported To Home </span>}
+                </div>
             </div>
             <SideBar />
         </div>

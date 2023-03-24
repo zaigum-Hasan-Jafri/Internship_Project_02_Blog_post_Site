@@ -1,11 +1,11 @@
 .PageSettings {
     width:100vw;
     display: flex;
-    flex-flow: wrap;
+    flex-wrap: wrap;
 }
 
 .setting-wrapper {
-    flex:1 1 50vw ;
+    flex:1 1 60vw ;
     height: 30vw;
     margin: 1rem 0 0 2rem;
     display: flex;
@@ -118,4 +118,12 @@
     background-color: teal;
     border-radius: 12px;
     color: wheat;
+}
+@media screen and (max-width:768px){
+    .PageSettings{
+        flex-flow: column wrap;
+    }
+    .setting-wrapper{
+        margin: 1rem 0 1rem 0;
+    }
 }

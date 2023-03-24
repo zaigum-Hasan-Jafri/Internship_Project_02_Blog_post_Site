@@ -20,7 +20,7 @@
 }
 
 .login-form {
-    width: 22vw;
+    width: fit-content;
     display: flex;
     flex-direction: column;
     background-color: #fff;

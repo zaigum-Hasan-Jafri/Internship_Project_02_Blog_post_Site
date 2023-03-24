@@ -54,7 +54,7 @@ export default function NewPost() {
 
             <form className="newPost-form" onSubmit={handleSubmit}>
                 <div className="newPost-form-group center">
-                    <label htmlFor="fileInput"><i className="newPost-form-icon fa-solid fa-circle-plus cur"></i></label>
+                    <label htmlFor="fileInput" className="newPost-form-icon"><i className="fa-solid fa-circle-plus cur"></i></label>
                     <input type="file" id='fileInput' style={{ display: 'none' }} onChange={e => setFile(e.target.files[0])} />
                     <input type="text" name="" id="textInput" placeholder='Title' className='newPost-form-title' autoFocus={true} onChange={e => setTitle(e.target.value)} />
                 </div>

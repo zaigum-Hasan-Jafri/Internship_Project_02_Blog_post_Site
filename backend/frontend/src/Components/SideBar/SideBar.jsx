@@ -13,7 +13,7 @@ const SideBar = () => {
         catData();
     }, [])
     return (
-        <div className='SideBar'>
+        <div className='SideBar' id='side-bar'>
             <div className="sidebar-items t-center">
                 <span className=" sidebar-title">About Me</span>
                 <img src="http://source.unsplash.com/300x200/?books" alt="books" className='sidebar-img' />

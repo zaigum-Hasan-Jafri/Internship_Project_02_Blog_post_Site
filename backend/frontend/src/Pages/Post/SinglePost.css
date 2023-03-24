@@ -4,8 +4,8 @@
 }
 
 .singlePost-body {
-    flex: 9;
-    min-width: 500px;
+    flex: 1 1 500px;
+    
 }
 
 .singlePost-img {
@@ -19,6 +19,7 @@
 .singlePost-title {
     font-family: 'Aboreto', serif;
     font-weight: 300;
+    padding: 1rem 1rem;
 }
 
 .singlePost-edit {
@@ -27,19 +28,21 @@
 }
 
 .singlePost-icon {
-    padding-left: 12px;
-    cursor: pointer;
+    padding-left: 1rem ;    
 }
 .singlePost-icon:first-child {
-    color: var(--blog-color)
+    color: var(--blog-color);
+    cursor: pointer;
 }
 .singlePost-icon:last-child {
     color: var(--bg-gray);
+    cursor: pointer;
 }
 
 .singlePost-info {
     display: flex;
     justify-content: space-between;
+    padding: 0 1rem;
 }
 .info-author{
     font-family: 'Lora', serif;
@@ -52,6 +55,7 @@
     font-weight: 300;
     font-size: 17px;
     line-height: 22px;
+    padding: 0 1rem;
 }
 .singlePost-description::first-letter
 {

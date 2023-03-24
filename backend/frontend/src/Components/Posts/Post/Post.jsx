@@ -17,8 +17,8 @@ const Post = ({ post }) => {
         } else {
             return "just now";
         }
-    }
-    const Profile = "https://zaigum-mern-blog-api.onrender.com/images/"
+    } 
+    const Profile = "/images/"
     return (
         <div className='Post'>
             <div className="post-container-img">{post.photo ? (<img src={Profile + post.photo} alt={post.title} className="post-img" />) : (null)}</div>
