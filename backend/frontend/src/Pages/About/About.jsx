@@ -11,7 +11,7 @@ const About = () => {
             </div>
             <div className="about-container">
                 <div className="lac f-josefin">Portfolio link:</div>
-                <div className="rac"><a href='https:zaigum-portfolio.netlify.app' rel='noreferrer' target={'_blank'} className='link'>Portfolio Live Link</a></div>
+                <div className="rac"><a href='https:zaigum-portfolio.netlify.app' target={'_blank'} className='link'>Portfolio Live Link</a></div>
             </div>
         </div>
     )
