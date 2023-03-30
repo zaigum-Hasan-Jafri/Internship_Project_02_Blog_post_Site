@@ -1,7 +1,7 @@
 .PageSettings {
     width:100vw;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap:wrap;
 }
 
 .setting-wrapper {
@@ -10,7 +10,7 @@
     margin: 1rem 0 0 2rem;
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
+    flex-flow:row wrap;
     border: 1px #867974 solid;
     border-radius: 1rem;
     background: #7c5e8c;
@@ -20,7 +20,7 @@
 }
 
 .setting-form {
-    flex:1 1 35rem ;
+    flex:1 1 100% ;
     background-color: #ffe9df;
     border-radius: 1rem 1rem 0 0;
     flex-direction: column;
@@ -30,7 +30,7 @@
 }
 
 .setting-title {
-    flex:1 1 20rem;
+    flex:1 1 100vw;
     height: fit-content;
     display: flex;
     align-items: center;

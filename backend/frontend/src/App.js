@@ -5,6 +5,7 @@ import Register from "./Pages/Register/Register";
 import NewPost from "./Pages/NewPost/NewPost";
 import PageSettings from "./Pages/Settings/PageSettings";
 import Home from "./Pages/Home/Home";
+import About from "./Pages/About/About";
 import SinglePost from "./Pages/Post/SinglePost";
 import { useContext } from "react";
 import { Context } from "./Context/Context";
@@ -18,6 +19,7 @@ function App() {
       <Routes>
         <Route path={"/home"} element={<Home />} />
         <Route path="/" element={<Home />} />
+        <Route path={"/about"} element={<About/>} />
         <Route path="/post/:postId" element={<SinglePost />} />
         <Route path="/newpost" element={user ? <NewPost /> : <Login />} />
         <Route path="/register" element={user ? <Home /> : <Register />} />

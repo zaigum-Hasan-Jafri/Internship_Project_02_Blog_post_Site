@@ -59,7 +59,7 @@ export default function NewPost() {
                     <input type="text" name="" id="textInput" placeholder='Title' className='newPost-form-title' autoFocus={true} onChange={e => setTitle(e.target.value)} />
                 </div>
                 <div className="newPost-form-group center">
-                    <input type="text" value={categories} placeholder='Categories' onChange={e => setCategories(e.target.value)} className='newPost-form-title' />
+                    <input type="text" value={categories} placeholder='Categories (split with ,)' onChange={e => setCategories(e.target.value)} className='newPost-form-title' />
                 </div>
                 <div className="newPost-form-group center">
                     <textarea
